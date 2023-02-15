@@ -1,23 +1,32 @@
 
 def is_uppercase(inp):
-    list=[]
-    
-    for x in (str(inp)):
-        list.append(x)
+    list_inp=list(inp)
     
 
-    index = 0
-    while index < len(list):
-        element = list[index]
-        if element == element.lower():
-            index += 1
-            return True
-        else:    
-            return True       
+    for i in list_inp:
+       
+        if i.isalpha() == True:
         
-        # BITMEDI
+            if i == i.lower():
+                return False
+            elif type(i)==type("!"):
+                return True
+            else:
+                return True
+        else:
+            return True   
 
 
-inp="hello I AM DONALD"
+# import re
+# def is_uppercase(inp):
+#     if inp.upper() == inp:
+#         return True
+#     elif re.match('[a-z]',inp) != None:
+#         return False
+#     else:
+#         return False
+
+
+inp="!"
 print(is_uppercase(inp))           
 
